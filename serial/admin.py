@@ -1,3 +1,5 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+admin.site.register(models.serial)
+admin.site.register(models.SerialComment)

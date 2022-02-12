@@ -1,10 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>BOOKS</title>
 </head>
 <body>
-$END$
+<h2>Title: {{ book.title }}</h2>
+<p>Content: {{ show.description }}</p>
+<img src="{{ book.image.url }}" alt="">
+<p>Quantity: {{ book.quantity }}</p>
+<p>Genre: {{ book.genre }}</p>
+<p>Created Date: {{ book.created_date }}</p>
+
+<div>
+    <h2>Comments:</h2>
+    <ul>
+        {% for i in book.book_comment.all %}
+        <li>
+            <p>{{ i.created_date }}</p>
+            <p>{{ i.text }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 </body>
 </html>

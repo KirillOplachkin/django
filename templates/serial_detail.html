@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Detail</title>
 </head>
 <body>
-$END$
+<h2>Detail:{{ serial.detail }}</h2>
+<p>Description:{{ serial.description }}</p>
+<img src="{{ serial.image.url }}" alt="">
+<p> quantity:{{ serial.quantity }}</p>
+<p> genre:{{ serial.qenre }}</p>
+<p> created_date:{{ serial.created_date }}</p>
+<p> updated_date:{{ serial.updated_date }}</p>
+<div>
+    <h2>Comments:</h2>
+    <ul>
+        {% for i in serial.serial_detail.all %}
+        <li>
+            <p>{{ i.text }}</p>
+            <p>{{ i.created_date }}</p>
+        </li>
+    </ul>
+</div>
 </body>
 </html>
