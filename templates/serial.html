@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Serial</title>
+    <link rel="stylesheet" href="">
 </head>
 <body>
 <div>
@@ -11,7 +13,7 @@
         <li>
             <h2><a href="/serial/{{ i.id }}/">{{ i.title }}</a></h2>
             <p>{{ i.description }}</p>
-            <img src = "{{ i.image.url}}" alt="">
+            <img src="{{ i.image.url}}" alt="">
         </li>
         {% endfor %}
     </ul>
