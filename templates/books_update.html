@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<style>
+    body {
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+    }
+
+    .form_add_books {
+        margin-top: 20px;
+        border-radius: 160px;
+        border: none;
+    }
+
+    .container__add__book {
+        margin-top: 40px;
+        border-radius: 130px;
+        justify-content: center;
+        gap: 20px;
+        display: flex;
+        height: 100%;
+    }
+
+    .button__add {
+        justify-content: center;
+        max-width: 800px;
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+    }
+</style>
+<form action="" method="POST"  enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Change">
+    <div class="container button__update">
+</body>
+</html>

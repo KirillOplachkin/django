@@ -7,14 +7,14 @@
 <body>
 <style>
     body {
-    background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
     }
 
 </style>
 <h2>Title: {{ book.title }}</h2>
 <p>Content: {{ book.description }}</p>
-<img src="{{ book.illusration.url }}" alt="">
+<img src="{{ book.illustration.url }}" alt="">
 <p>Quantity: {{ book.quantity }}</p>
 <p>Genre: {{ book.genre }}</p>
 <p>Created Date: {{ book.created_date }}</p>
@@ -27,6 +27,10 @@
         </li>
         {% endfor %}
     </ul>
+</div>
+<div>
+
+    <button type="button" class="btn btn-secondary"><a href="/book/{{ book.id }}/delete/">Delete</a> </button>
 </div>
 </body>
 </html>
