@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'serial',
     'book_detail',
     'parser_app',
+    'users',
 ]
 
 MIDDLEWARE = [

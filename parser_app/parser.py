@@ -2,8 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 from django.views.decorators.csrf import csrf_exempt
 
-HOST = "https://www.tvigle.ru/"
-URL = "https://www.tvigle.ru/catalog/filmy/"
+HOST = "https://rezka.ag"
+URL = "https://rezka.ag/films"
 
 HEADERS = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
@@ -18,14 +18,14 @@ def get_html(url, params=''):
 @csrf_exempt
 def get_data(html):
     soup = BeautifulSoup(html, 'html.parser')
-    items = soup.find_all('a', class_='product-list__item kind__film')
+    items = soup.find_all('div', class_="b-content__inline_item")
     films = []
 
     for item in items:
         films.append(
             {
-                'title': item.find('div', class_='product-list__item_name').get_text(),
-                'image': HOST + item.find('div', class_='poster').find('img').get('src')
+                'title': item.find('div', class_="b-content__inline_item-link").get_text(),
+                'image': item.find('a', href_="").find('img').get('src')
             }
         )
 
